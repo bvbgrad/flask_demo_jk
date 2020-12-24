@@ -4,18 +4,18 @@ import logging
 from flask import Flask
 
 
-app = Flask(__name__, instance_relative_config=True)
+app = Flask(__name__)
 
 # configure the app
-app.config.from_object('instance.config.BaseConfig')
+app.config.from_object('app.instance.config.BaseConfig')
 if app.env == "development":
-    app.config.from_object('instance.config.DevelopmentConfig')
+    app.config.from_object('app.instance.config.DevelopmentConfig')
     logging.basicConfig(level=logging.DEBUG)
 elif app.env == "test":
-    app.config.from_object('instance.config.TestConfig')
+    app.config.from_object('app.instance.config.TestConfig')
     logging.basicConfig(level=logging.DEBUG)
 elif app.env == "production":
-    app.config.from_object('instance.config.ProductionConfig')
+    app.config.from_object('app.instance.config.ProductionConfig')
 
 logging.info("Flask Application initialized")
 
