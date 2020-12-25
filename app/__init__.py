@@ -22,6 +22,10 @@ logging.info("Flask Application initialized")
 
 @app.route("/", methods=["GET"])
 def return_home():
+    try:
+        hostname = os.environ['HOSTNAME']
+    except Exception:
+        hostname = 'demo'
     current_time = dt.now().strftime("%Y%m%d %H:%M:%S")
-    msg = f"<h2>Flask DevOps time = {current_time}</h2>"
+    msg = f"<h3>Flask host '{hostname}', time = {current_time}</h3>"
     return msg, 200

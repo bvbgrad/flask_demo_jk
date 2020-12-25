@@ -19,4 +19,3 @@ WORKDIR /demo
 
 # command to run on container start
 CMD [ "python", "./flask_demo.py" ]
-# CMD ["sh"]
