@@ -7,17 +7,17 @@ pipeline {
             }
             steps {
                 sh 'node --version'
-                sh 'echo "build stage"; exit 0'
+                echo "build stage"
             }
         }
         stage('Test') {
             steps {
-                sh 'echo "Successful test!"; exit 0'
+                echo "Successful test!"
             }
         }
         stage('Depoly') {
             steps {
-                sh 'echo "Failed deploy!"; exit 1'
+                echo "Failed deploy!"
             }
         }
     }
