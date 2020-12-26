@@ -3,17 +3,17 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo "Build success!"; exit 0
+                sh 'echo "Build success!"; exit 0'
             }
         }
         stage('Test') {
             steps {
-                echo "Successful test!"; exit 0
+                sh 'echo "Successful test!"; exit 0'
             }
         }
         stage('Depoly') {
             steps {
-                echo "Failed deploy!"; exit 1
+                sh 'echo "Failed deploy!"; exit 1'
             }
         }
     }
