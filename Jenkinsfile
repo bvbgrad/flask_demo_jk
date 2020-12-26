@@ -1,9 +1,19 @@
 pipeline {
     agent any
     stages {
+        stage('Build') {
+            steps {
+                echo "Build success!"; exit 0
+            }
+        }
         stage('Test') {
             steps {
-                sh 'echo "Successful test!"; exit 0'
+                echo "Successful test!"; exit 0
+            }
+        }
+        stage('Depoly') {
+            steps {
+                echo "Failed deploy!"; exit 1
             }
         }
     }
